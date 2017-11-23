@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Coffee.cs" />
+    <Compile Remove="CoffeesViewModel.cs" />
+    <Compile Remove="DistanceUtils.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.280" />
+  </ItemGroup>
+
+</Project>
