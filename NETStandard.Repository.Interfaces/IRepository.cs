@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace NETStandard.Shared
@@ -9,7 +9,7 @@ namespace NETStandard.Shared
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetByIdAsync(int id);
-        Task<bool> AddProductAsync(T t);
+        Task<bool> AddAsync(T t);
         Task<bool> UpdateAsync(T t);
         Task<bool> DeleteAsync(int id);
         Task<IEnumerable<T>> FindByAsync(Func<T, bool> predicate);
