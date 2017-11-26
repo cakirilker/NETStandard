@@ -13,11 +13,11 @@ namespace NETStandard.API.Controllers
     [Route("api/[controller]")]
     public class MovieController : Controller
     {
-        MovieRepository movieRepository;
+        MovieRepository _movieRepository;
 
         public MovieController()
         {
-            movieRepository = new MovieRepository();
+            _movieRepository = new MovieRepository();
         }
         // GET: api/Movie
         //[HttpGet]
@@ -29,7 +29,7 @@ namespace NETStandard.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(movieRepository.GetAllAsync().Result);
+            return Ok(_movieRepository.GetAllAsync().Result);
         }
 
         //// GET: api/Movie/5
@@ -40,8 +40,9 @@ namespace NETStandard.API.Controllers
         //}
 
         [HttpGet("{id}", Name = "Get")]
-        public IActionResult GetById(int id) {
-            Movie item = movieRepository.GetByIdAsync(id).Result;
+        public IActionResult GetById(int id)
+        {
+            Movie item = _movieRepository.GetByIdAsync(id).Result;
             if (item == null)
             {
                 return NotFound();
@@ -53,27 +54,58 @@ namespace NETStandard.API.Controllers
         [HttpPost]
         public IActionResult Create([FromBody]Movie movie)
         {
-            if (movie == null) {
+            bool x;
+            try
+            {
+                if (movie == null)
+                    return BadRequest();
+
+                 x = _movieRepository.AddAsync(movie).Result;
+
+            }
+            catch (Exception ex)
+            {
                 return BadRequest();
             }
-
-            bool x = movieRepository.AddAsync(movie).Result;
-            return new ObjectResult(x);
-            //return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
+            return Ok(x);
         }
 
-        [HttpPut]
-        public IActionResult Update([FromBody]Movie value)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody]Movie item)
         {
-            bool x = movieRepository.UpdateAsync(value).Result;
-            return NoContent();
+            try
+            {
+                if (item == null || item.Id != id)
+                    return BadRequest();
+                if (_movieRepository.GetByIdAsync(item.Id).Result == null)
+                    return NotFound();
+
+                bool x = _movieRepository.UpdateAsync(item).Result;
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+            return new NoContentResult();
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-            bool x = movieRepository.DeleteAsync(id).Result;
+            try
+            {
+                if (_movieRepository.GetByIdAsync(id).Result == null)
+                    return NotFound();
+
+                bool x = _movieRepository.DeleteAsync(id).Result;
+            
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+            return new NoContentResult();
         }
     }
 }

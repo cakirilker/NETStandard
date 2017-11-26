@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NETStandard.Standard.Data;
+using NETStandard.Standard.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +11,12 @@ namespace NETStandard
 {
     public partial class App : Application
     {
+        public static MovieManager movieManager { get; private set; }
         public App()
         {
             InitializeComponent();
 
+            movieManager = new MovieManager(new MovieRestService());
             MainPage = new NETStandard.MainPage();
         }
 

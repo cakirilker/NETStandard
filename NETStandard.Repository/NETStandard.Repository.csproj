@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NETStandard.Entities\NETStandard.Entities.csproj" />
     <ProjectReference Include="..\NETStandard.Repository.Interfaces\NETStandard.Repository.Interfaces.csproj" />
   </ItemGroup>
 

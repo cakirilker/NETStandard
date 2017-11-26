@@ -142,9 +142,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NETStandard.Shared\NETStandard.Shared.csproj">
-      <Project>{bfe624f0-da01-4930-a9b9-c3fb507fbe92}</Project>
-      <Name>NETStandard.Shared</Name>
+    <ProjectReference Include="..\..\NETStandard.Standard\NETStandard.Standard.csproj">
+      <Project>{7f5351dc-556f-4913-8b5c-78bdf998a950}</Project>
+      <Name>NETStandard.Standard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

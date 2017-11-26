@@ -5,12 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Coffee.cs" />
-    <Compile Remove="CoffeesViewModel.cs" />
-    <Compile Remove="DistanceUtils.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.280" />
   </ItemGroup>
 
