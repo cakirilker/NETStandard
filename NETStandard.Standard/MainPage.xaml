@@ -13,7 +13,6 @@
                             <Label Text="{Binding Duration,StringFormat='{0} mins.'}" VerticalTextAlignment="Center"  />
                         </StackLayout>
                     </ViewCell>
-
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
