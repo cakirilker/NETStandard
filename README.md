@@ -1,2 +1,2 @@
-## Xamarin.Forms/.NET Standard Project
-> A basic repo for using .NET Standard in Xamarin.Forms project. It uses a Web API for data operations. It's made to demonstrate/experiment project environment. Please also see NETStandard.API repo which used in this project.
+# Xamarin.Forms with .NET Standard
+An example project for .NET Standard in Xamarin.Forms. It's made to demonstrate/experiment project environment. Please also see [NET.Standard.API](https://github.com/cakirilker/NETStandard.API) repository which's used in this project.
