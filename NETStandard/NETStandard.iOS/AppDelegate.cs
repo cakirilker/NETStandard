@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using NETStandard.Standard.Views;
 
 namespace NETStandard.iOS
 {

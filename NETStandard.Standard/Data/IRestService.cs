@@ -7,10 +7,10 @@ namespace NETStandard.Standard.Data
 {
     public interface IRestService<T> where T : class
     {
-        Task<IList<T>> RefleshDataAsync();
-        T GetItemByIdAsync(int id);
+        Task<List<T>> RefreshDataAsync();
+        Task<T> GetItemByIdAsync(int id);
         Task CreateItemAsync(T item);
-        Task UpdateItemAsync(T item);
+        Task UpdateItemAsync(int id, T item);
         Task DeleteItemAsync(int id);
     }
 }

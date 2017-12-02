@@ -18,9 +18,10 @@ namespace NETStandard
         /// <summary>
         /// URL of REST service.
         /// </summary>
-        public static string RestUrl = "http://10.0.2.2:5000/api/movie/{0}";
+        public static string RestUrl = "http://192.168.1.29:5000/api/movie/{0}";
         // Credentials that are hard coded into the REST service
         public static string Username = "Username";
         public static string Password = "Password";
+       
     }
 }
